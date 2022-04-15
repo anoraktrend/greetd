@@ -46,7 +46,7 @@ mkdir /etc/greetd
 cp config.toml /etc/greetd/config.toml
 
 # Create the greeter user
-sudo useradd -M -G video greeter
+sudo useradd -u 998 -M -G video greeter #if uid 998 is in use, dont worry, any uid under 1000 should work to hide greeter from greetd 
 sudo chmod -R go+r /etc/greetd/
 
 # Look in the configuration file `/etc/greetd/config.toml` and edit as appropriate.
